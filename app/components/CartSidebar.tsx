@@ -11,7 +11,7 @@ export function CartSidebar({ open, onClose }: { open: boolean; onClose: () => v
 
   return (
     <Sheet open={open} onOpenChange={onClose}>
-      <SheetContent className="w-full sm:max-w-md">
+      <SheetContent className="w-full sm:max-w-md bg-white">
         <div className="py-4 border-b">
           <h2 className="text-lg px-6">
             Cart {cart.length} items
@@ -85,7 +85,7 @@ export function CartSidebar({ open, onClose }: { open: boolean; onClose: () => v
               SECURE CHECKOUT
             </button>
             
-            <button className="w-full text-center text-sm font-medium hover:text-gray-600">
+            <button className="w-full text-center text-sm font-medium hover:text-gray-600 mb-8">
               SAVE FOR LATER
             </button>
           </div>
