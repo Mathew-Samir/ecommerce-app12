@@ -41,7 +41,7 @@ export default function Header() {
       <header className="relative z-50">
         {/* Utility Navbar */}
         <div
-          className={`bg-[#F5F2ED] transition-transform duration-300 fixed w-full top-0 ${isUtilityBarVisible ? 'translate-y-0' : '-translate-y-full'
+          className={`bg-[#F5F2ED] transition-transform duration-300 fixed w-full top-0 z-50 ${isUtilityBarVisible ? 'translate-y-0' : '-translate-y-full'
             }`}
         >
           <div className="container mx-auto px-4 h-10 flex items-center justify-between text-sm">
@@ -68,8 +68,7 @@ export default function Header() {
         </div>
 
         {/* Main Navbar */}
-        <div className={`bg-white border-b border-gray-200 fixed w-full ${isUtilityBarVisible ? 'top-10' : 'top-0'
-          }`}>
+        <div className={`bg-white border-b border-gray-200 fixed w-full z-50 ${isUtilityBarVisible ? 'top-10' : 'top-0'}`}>
           <div className="container mx-auto px-4">
             <div className="h-16 flex items-center justify-between">
               {/* Mobile Menu Button */}
@@ -146,51 +145,43 @@ export default function Header() {
             </div>
           </div>
         </div>
-      {/* Hero Section */}
-      <div className="pt-[104px]">
-        <div className="relative h-[300px] sm:h-[350px]">
-          <Image
-            src={HERO_IMAGE_URL}
-            alt="Outdoor Furniture Hero Image"
-            fill
-            className="object-cover z-0"  // Add z-0 here to set the image behind other elements
-            priority
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-10 z-10" />  {/* Add z-10 to ensure the overlay stays above the image */}
-          <div className="relative container mx-auto px-4 h-full flex flex-col justify-center text-white z-20">  {/* Add z-20 to ensure the text stays above everything */}
-            <h1 className="text-2xl sm:text-3xl mb-4 text-shadow">Outdoor Furniture</h1>
-            <p className="text-lg sm:text-xl max-w-lg text-shadow">
-              Modular seating, patio designs, and outdoor dining sets all made with durable, all-weather materials.
-            </p>
+
+        {/* Hero Section */}
+        <div className="pt-[104px] relative">
+          <div className="relative h-[300px] sm:h-[350px] z-0"> {/* z-0 ensures this stays below the navbar */}
+            <Image
+              src={HERO_IMAGE_URL}
+              alt="Outdoor Furniture Hero Image"
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-10 z-10" /> {/* Overlay */}
+            <div className="relative container mx-auto px-4 h-full flex flex-col justify-center text-white z-20">
+              <h1 className="text-2xl sm:text-3xl mb-4 text-shadow">Outdoor Furniture</h1>
+              <p className="text-lg sm:text-xl max-w-lg text-shadow">
+                Modular seating, patio designs, and outdoor dining sets all made with durable, all-weather materials.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-
       </header>
 
       {/* Mobile Sidebar */}
       <div
-        className={`fixed inset-0 z-50 transition-transform duration-300 ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
-          }`}
+        className={`fixed inset-0 z-50 transition-transform duration-300 ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}
       >
-        {/* Overlay */}
         <div
           className="fixed inset-0 bg-black bg-opacity-50"
           onClick={() => setIsMobileMenuOpen(false)}
         />
-
-        {/* Sidebar Content */}
         <div className="relative w-64 h-full bg-white shadow-lg">
-          {/* Sidebar Header */}
           <div className="flex items-center justify-between p-4 border-b border-gray-200">
-            {/* Website Name (Centered) */}
             <div className="flex-1 text-center">
-              <Link href="/" className="text-2xl font-bol">
+              <Link href="/" className="text-2xl font-bold">
                 BURROW
               </Link>
             </div>
-
-            {/* Close Button (Top Right) */}
             <button
               className="p-2"
               onClick={() => setIsMobileMenuOpen(false)}
@@ -199,8 +190,6 @@ export default function Header() {
               <X className="w-6 h-6" />
             </button>
           </div>
-
-          {/* Sidebar Links */}
           <nav className="p-4">
             <ul className="space-y-4">
               {mainCategories.map((category) => (
