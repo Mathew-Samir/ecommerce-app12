@@ -17,6 +17,7 @@ export default function Home() {
   const [products, setProducts] = useState<Product[]>([])
   const [categories, setCategories] = useState<string[]>([])
   const [selectedCategory, setSelectedCategory] = useState<string>('')
+
   const { addToCart } = useCart()
 
   useEffect(() => {
@@ -40,9 +41,7 @@ export default function Home() {
         <nav className="flex space-x-8 pb-4">
           <button
             onClick={() => setSelectedCategory('')}
-            className={`text-sm hover:text-gray-600 ${
-              selectedCategory === '' ? 'font-medium' : ''
-            }`}
+            className={`text-sm hover:text-gray-600 ${selectedCategory === '' ? 'font-medium' : ''}`}
           >
             All
           </button>
@@ -50,9 +49,7 @@ export default function Home() {
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`text-sm hover:text-gray-600 ${
-                selectedCategory === category ? 'font-medium' : ''
-              }`}
+              className={`text-sm hover:text-gray-600 ${selectedCategory === category ? 'font-medium' : ''}`}
             >
               {category}
             </button>
@@ -61,9 +58,9 @@ export default function Home() {
       </div>
 
       {/* Product Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8">
         {filteredProducts.map(product => (
-          <div key={product.id} className="flex flex-col group">
+          <div key={product.id} className="flex flex-col group bg-white p-4">
             <Link href={`/product/${product.id}`} className="relative block bg-gray-100 mb-4">
               <img
                 src={product.image}
@@ -85,10 +82,16 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            {/* Add to Cart button */}
+            <button
+              onClick={() => addToCart({ id: product.id, title: product.title, price: product.price, quantity: 1, image: product.image })}
+              className="w-full bg-black text-white py-2 text-lg font-medium hover:bg-gray-800 transition-colors mt-2"
+            >
+              Add to Cart
+            </button>
           </div>
         ))}
       </div>
     </div>
   )
 }
-
