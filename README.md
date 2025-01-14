@@ -2,7 +2,7 @@
 
 ## Description
 
-This project is a full-stack e-commerce application designed to provide users with a seamless online shopping experience. It includes features such as product browsing, shopping cart functionality, user authentication, and order management.
+This project is a Frontend e-commerce application designed to provide users with a seamless online shopping experience. It includes features such as product browsing and shopping cart functionality.
 
 ## Table of Contents
 
