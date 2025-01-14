@@ -31,9 +31,11 @@ To run this project locally, follow these steps:
    ```bash
    git clone https://github.com/Mathew-Samir/ecommerce-app12.git
    cd ecommerce-app12
+   ```bash
 2. **Install dependencies**:   
    npm install
-3. **Run the application**:   
+   ```bash
+4. **Run the application**:   
    npm run dev
 
 
