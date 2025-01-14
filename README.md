@@ -11,21 +11,15 @@ This project is a Frontend e-commerce application designed to provide users with
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
-- **User Authentication**: Secure registration and login functionality.
-- **Product Management**: Browse and search for products with detailed information.
 - **Shopping Cart**: Add, remove, and manage products in the cart.
-- **Order Processing**: Place orders and view order history.
 - **Responsive Design**: Optimized for various device sizes.
 
 ## Technologies Used
 
-- **Frontend**: React, Redux, Tailwind CSS
-- **Backend**: Node.js, Express.js, MongoDB
-- **Authentication**: JSON Web Tokens (JWT)
+- **Frontend**: React, Redux, Tailwind CSS and Shadcn/ui
 - **Deployment**: Vercel
 
 ## Installation
