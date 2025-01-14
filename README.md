@@ -16,6 +16,7 @@ This project is a Frontend e-commerce application designed to provide users with
 
 - **Shopping Cart**: Add, remove, and manage products in the cart.
 - **Responsive Design**: Optimized for various device sizes.
+- **Sorting Products**: Sorting functionality on the product listing page.
 
 ## Technologies Used
 
