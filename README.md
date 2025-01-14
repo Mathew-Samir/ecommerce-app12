@@ -19,7 +19,7 @@ This project is a Frontend e-commerce application designed to provide users with
 
 ## Technologies Used
 
-- **Frontend**: React, Redux, Tailwind CSS and Shadcn/ui
+- **Frontend**: React, Nextjs, Tailwind CSS and Shadcn/ui
 - **Deployment**: Vercel
 
 ## Installation
